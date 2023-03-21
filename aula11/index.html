@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocidade</title>
+</head>
+<body>
+    <h1>Radar</h1>
+    <p>velocidade</p>
+    <input type="number" name="textnumber" id="numero">
+    <input type="submit" value="calcular" id="botaoCalculo">
+    <div id="res"></div>
+
+    <script>
+        document.getElementById('botaoCalculo').addEventListener('click', calcular)
+        function calcular(){
+            var txt = document.getElementById('numero')
+            var num = Number(txt.value)
+            var resultado = document.getElementById('res')
+            if( num > 40){
+                resultado.innerHTML = `<p>velocidade atual de <strong>${num}Km/h</strong>, voce está ${num - 40}Km/h acima do limite de velocidade</p>`
+            } else {
+                resultado.innerHTML = `<p>Voce está à <strong>${num}Km/h, dirija com cuidado</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
