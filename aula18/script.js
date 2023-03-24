@@ -25,6 +25,7 @@ function adicionar(){
         let item = document.createElement('option')
         item.text = `valor ${novo.value}`
         lista.appendChild(item)
+        resultado.innerHTML = ''
     } else {
         window.alert('valor invalido')
     }
@@ -36,6 +37,20 @@ function finalizar(){
     if(numeros.length == 0){
         window.alert('precisa adicionar valores')
     } else {
-        resultado.innerHTML = ``
+        let total = numeros.length;
+        resultado.innerHTML = ``;
+        resultado.innerHTML += `<p>temos ${total} itens ao todo</p>`
+
+        let maior = numeros[0];
+        let menor = numeros[0];
+        for(let i=0; i<numeros.length; i++){
+            if(numeros[i] > maior){
+                maior = numeros[i]
+            }
+            if(numeros[i] < menor){
+                menor = numeros[i]
+            }
+        }
+        resultado.innerHTML += `<p>menor valor ${menor} e maior valor ${maior}</p>`
     }
 }
